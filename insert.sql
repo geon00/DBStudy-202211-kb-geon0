@@ -9,14 +9,14 @@
  카멜표기벅 사용x 스네이크 표기법 사용
  DB에서는 '가 문자열이다.
  파란글씨 기준으로 잘라 줄바꿈 / 컬럼이 많은 경우 ,다음 줄바꿈
+ useruser(id, product_name, product_price) VALUES에 순서대로 들어가 있으면 생략가능 
  */
  
  INSERT INTO product_mst
- /* (id, product_name, product_price) VALUES에 순서대로 들어가 있으면 생략가능 */
  VALUES
- (0, '스타벅스 블랙  머그컵221', 20000),
- (0, '스타벅스 화이트  머그컵221', 15000),
- (0, '스타벅스 블루  머그컵221', 20000);
+ (0, '스타벅스 블랙  머그컵2221', 20000),
+ (0, '스타벅스 화이트  머그컵2221', 15000),
+ (0, '스타벅스 블루  머그컵2221', 20000);
  
  SELECT/*선택, 입력순서가 중요*/
   	id,
@@ -74,4 +74,26 @@ FROM
 WHERE
 	`name` is NOT NULL;
 	
+UPDATE student_mst
+SET score = 80
+WHERE `NAME` = '박준현'; 
+
+/*
+2학년 중에 성적이 80 ~ 90 사이인 학생들의 점수를 100으로 바꿔라
+*/
+
+UPDATE 
+	student_mst
+SET
+	score = 100  
+WHERE 
+	student_year = 2 
+	AND score BETWEEN 80 AND 90;
 	
+/*-----------------------------------------------------------*/
+
+DELETE
+FROM
+	student_mst
+WHERE
+	score < 80;
